@@ -1,9 +1,15 @@
-var validator = require('email-validator')
+const emailValidator = (email) => {
+    const atSignValid = email.includes('@')
+    const dotComValid = email.toLowerCase().includes('.com')
+    const dotIrValid = email.toLowerCase().includes('.ir')
 
-
-const isValid = (email) => {
-    return validator.validate(email)
+    if ((atSignValid && dotComValid) || (atSignValid && dotIrValid)) {
+        return `Email is Valid`
+    } else {
+        return `Emial is unvalid`
+    }
 }
 
-// console.log(isValid('hello@.com'))
-// console.log(isValid('hello@gmail.com'))
+// Test
+console.log(emailValidator('hello@gamilcom'))
+console.log(emailValidator('hello@gamil.com'))
