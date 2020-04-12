@@ -1,18 +1,5 @@
-const repeated = []
-
-
-const generateRandom = () => {
-    repeated.push(2)
-    // let randomNumber = Math.floor((Math.random() * (6 - 1 + 1)) + 1)
-    // if (!repeated.includes(randomNumber)) {
-    //     repeated.push(randomNumber)
-    // } else {
-    //     while (!repeated.includes(randomNumber)) {
-    //         randomNumber = Math.floor((Math.random() * (6 - 1 + 1)) + 1)
-    //     }
-    //     repeated.push(randomNumber)
-    // }
+const generateRandom = (start, end) => {
+    return Math.floor(Math.random() * (end - start + 1) + start)
 }
 
-generateRandom()
-console.log(repeated)
+console.log(generateRandom(10000, 59999))
